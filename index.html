@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMÜ Etkinlik Başvurusu</title> 
+</head>
+<body>
+    <h1>OMÜ Etkinlik Başvuru Formu</h1>
+    <p>Geleceğin teknolojilerini keşfetmek ve alanında uzman kişilerle tanışmak için etkinliğimize başvurun. Lütfen formu eksiksiz doldurunuz.</p>
+
+    <form action="https://webhook.site/03ca4b3e-e4fa-410e-8106-9101016df07b" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Kişisel Bilgiler</legend>
+
+            <div>
+                <label for="adSoyad">Ad Soyad:</label>
+                <input type="text" id="adSoyad" name="adSoyad" required minlength="3">
+            </div>
+            <br>
+
+            <div>
+                <label for="ogrNo">Öğrenci No:</label>
+                <input type="number" id="ogrNo" name="ogrNo" min="100000" max="999999999" required>
+                <small> (Lütfen 9 haneli öğrenci numaranızı giriniz.)</small>
+            </div>
+            <br>
+
+            <div>
+                <label for="eposta">E-posta Adresi:</label>
+                <input type="email" id="eposta" name="eposta" required>
+            </div>
+            <br>
+
+            <div>
+                <label for="telefon">Telefon Numarası:</label>
+                <input type="tel" id="telefon" name="telefon" pattern="05[0-9]{2}[0-9]{3}[0-9]{2}[0-9]{2}" placeholder="05XX XXX XX XX">
+            </div>
+            <br>
+
+            <div>
+                <label for="dogumTarihi">Doğum Tarihi:</label>
+                <input type="date" id="dogumTarihi" name="dogumTarihi">
+            </div>
+            <br>
+
+            <div>
+                <label for="webSitesi">LinkedIn veya Web Siteniz:</label>
+                <input type="url" id="webSitesi" name="webSitesi" placeholder="https://linkedin.com/in/profil">
+            </div>
+
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Etkinlik ve Tercihler</legend>
+
+            <div>
+                <label for="oturum">Katılmak İstediğiniz Oturum:</label> 
+                <select id="oturum" name="oturum" required>
+                    <option value="">Lütfen bir oturum seçiniz</option>
+                    
+                    <optgroup label="Yazılım">
+                        <option value="web">Web Geliştirme</option>
+                        <option value="mobil">Mobil Uygulama</option>
+                    </optgroup>
+                    
+                    <optgroup label="Güvenlik & Veri">
+                        <option value="siber">Siber Güvenlik</option>
+                        <option value="yapay_zeka">Yapay Zeka</option>
+                    </optgroup>
+                </select>
+            </div>
+            <br>
+
+            <div>
+                <label>Katılım Tipi:</label> 
+                <input type="radio" id="yuzYuze" name="katilimTipi" value="Yüz Yüze" required>
+                <label for="yuzYuze">Yüz Yüze</label>
+                
+                <input type="radio" id="online" name="katilimTipi" value="Online" required>
+                <label for="online">Online</label>
+            </div>
+            <br>
+
+            <div>
+                <label>İlgilendiğiniz Teknolojiler:</label><br> 
+                <input type="checkbox" id="html_css" name="teknolojiler[]" value="HTML/CSS">
+                <label for="html_css">HTML / CSS</label><br>
+
+                <input type="checkbox" id="java" name="teknolojiler[]" value="Java">
+                <label for="java">Java</label><br>
+
+                <input type="checkbox" id="sql" name="teknolojiler[]" value="SQL">
+                <label for="sql">SQL</label><br>
+
+                <input type="checkbox" id="flutter" name="teknolojiler[]" value="Flutter">
+                <label for="flutter">Flutter</label><br>
+                
+                <input type="checkbox" id="firebase" name="teknolojiler[]" value="Firebase">
+                <label for="firebase">Firebase</label>
+            </div>
+            <br>
+
+            <div>
+            <label for="motivasyon">Katılım Motivasyonunuz:</label><br>
+            <textarea id="motivasyon" name="motivasyon" rows="4" cols="60" maxlength="600" required placeholder="Lütfen bu etkinliğe neden katılmak istediğinizi açıklayın..."></textarea>
+            </div>
+            
+
+        </fieldset>
+       
+        <fieldset>
+            <legend>Ek Bilgiler</legend>
+
+            <div>
+                <label for="cvYukle">CV Yükleyiniz (.pdf, .doc, .docx):</label>
+                <input type="file" id="cvYukle" name="cvYukle" accept=".pdf, .doc, .docx" required>
+            </div>
+            <br>
+
+            <div>
+                <label for="gano">Not Ortalaması (GANO):</label>
+                <input type="range" id="gano" name="gano" min="0" max="4" step="0.01" value="2.00" oninput="document.getElementById('ganoDeger').innerText = this.value">
+                <span id="ganoDeger">2.00</span>
+            </div>
+            <br>
+
+            <div>
+                <label for="renk">Tercih Ettiğiniz Yaka Kartı Rengi:</label>
+                <input type="color" id="renk" name="renk" value="#ff0000">
+            </div>
+            <br>
+
+            <div>
+                <label for="uygunluk">Görüşme İçin Uygun Saatiniz:</label>
+                <input type="time" id="uygunluk" name="uygunluk">
+            </div>
+            <br>
+
+            <div>
+                <input type="checkbox" id="kvkk" name="kvkk" required>
+                <label for="kvkk">KVKK Aydınlatma Metnini okudum ve kabul ediyorum.</label>
+            </div>
+
+        </fieldset>
+        <br>
+        <fieldset>
+        <div>
+            <button type="submit">Başvuruyu Tamamla</button>
+            
+            <button type="reset">Formu Temizle</button>
+        </div>
+        </fieldset>
+    </form>
+
+    <br><hr>
+    <small>Gizlilik / KVKK Bilgilendirmesi: Bu form aracılığıyla toplanan veriler yalnızca etkinlik organizasyonu amacıyla kullanılacak ve üçüncü şahıslarla paylaşılmayacaktır.</small>
+
+</body>
+</html>
